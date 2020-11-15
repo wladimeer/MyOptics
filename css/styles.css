@@ -1,0 +1,279 @@
+html {
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: 'Balsamiq Sans', cursive;
+    background-image: url(
+        "../image/background_index.jpg"
+    );
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+    background: #3a3b51;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #595a6d;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    border-radius: 5px;
+    background: #68687b;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contentDrawing {
+    margin: 20px;
+    display: flex;
+    padding: 12px;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contentDrawing-Index {
+    width: 400px;
+    background-color: rgba(
+        255, 255, 255, 0.8
+    );
+}
+
+.contentDrawing-Manager {
+    width: 1000px;
+    color: #FFFFFF;
+}
+
+.header {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-Index {
+    border-bottom: 2px solid #232121;
+}
+
+.header-Manager {
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.header__a {
+    padding: 8px;
+    transition: 2s;
+    color: #FFFFFF;
+    margin-left: 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    background: #3a3b51;
+}
+
+.header__a:hover {
+    cursor: pointer;
+    background: #595a6d;
+}
+
+.content {
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.content-Index {
+    margin: 100px;
+}
+
+.content-Manager {
+    margin: 20px;
+}
+
+.content__table {
+    width: 100%;
+    border-spacing: 0;
+    border-radius: 5px;
+    text-align: center;
+    background: #FFFFFF;
+    border-collapse: separate;
+    border: 5px solid #595a6d;
+}
+
+.content__a {
+    transition: 2s;
+    color: #FFFFFF;
+    text-decoration: none;
+    background: #3a3b51;
+}
+
+.content__a:hover {
+    cursor: pointer;
+    background: #595a6d;
+}
+
+.content__th {
+    padding: 8px;
+    border: none;
+    color: #000000;
+    background: #595a6d;
+    border-bottom: 3px solid #595a6d;
+}
+
+.content__td {
+    border: none;
+    padding: 8px;
+    border-bottom: 3px solid #595a6d;
+}
+
+.content__label:hover {
+    cursor: pointer;
+}
+
+.content__inputs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 34px;
+    justify-content: space-between;
+}
+
+.content__input {
+    width: 68%;
+    padding: 6px;
+    outline: none;
+    border-radius: 8px;
+    background: #FFFFFF;
+    border: 2px solid transparent;
+}
+
+.content__input:focus {
+    border: 2px solid #34495e;
+}
+
+.content__button {
+    width: 100%;
+    filter: none;
+    padding: 8px;
+    border: none;
+    outline: none;
+    transition: 2s;
+    margin: 12px 0;
+    font-size: 20px;
+    color: #FFFFFF;
+    border-radius: 8px;
+    background: #c83b41;
+}
+
+.content__button:hover {
+    cursor: pointer;
+    background: #a13030;
+}
+
+.content__select {
+    width: 100%;
+    padding: 8px;
+    transition: 0.1s;
+    border-radius: 1px;
+    margin-bottom: 46px;
+    border: 2px solid #ffffff;
+}
+
+.content__select:hover {
+    cursor: pointer;
+}
+
+.content__result {
+    margin: 22px 0;
+    text-align: center;
+}
+
+.footer__p {
+    font-size: 14px;
+}
+
+.result-active {
+    animation-duration: 1s;
+    animation-name: result-message;
+}
+
+@keyframes result-message {
+    0%   {font-size: 0px;}
+    100% {font-size: 16px;}
+}
+
+.refresh__title {
+    font-size: 26px;
+}
+
+.refresh__p {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 1100px) {
+
+    .contentDrawing {
+        width: 92%;
+        padding: 0;
+        margin: 10px;
+    }
+
+     .header {
+        width: 100%;
+        display: grid;
+        text-align: center;
+        grid-template-columns: 1fr;
+    }
+
+    .header__options {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .header__a {
+        padding: 6px;
+        margin-left: 0;
+        margin-bottom: 4px;
+    }
+
+    .content-Index {
+        width: 90%;
+        margin: 20px;
+    }
+
+    .content-Manager {
+        width: 100%;
+    }
+
+    .content__form {
+        width: 100%;
+    }
+
+    .content__th, 
+    .content__td {
+        padding: 8px 6px;
+        box-sizing: border-box;
+    }
+
+    .content__inputs {
+        margin-bottom: 12px;
+    }
+    
+    .content__select {
+        margin-bottom: 54px;
+    }
+    
+}
