@@ -27,7 +27,7 @@
                     </div>
                 </header>
 
-                <section class="content content-Manager" id="content"></section>  
+                <section class="content content-Manager" id="content"></section>
             <?php } ?>
 
             <?php if(!isset($_SESSION["user"])) { ?>

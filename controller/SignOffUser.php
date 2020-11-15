@@ -5,9 +5,6 @@
 
         public function signOff() {
             session_start();
-
-            $role = $_SESSION["user"]["role"];
-    
             unset($_SESSION["user"]);
             header("Location: ../index.php");
         }

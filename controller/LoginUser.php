@@ -42,17 +42,21 @@
                     if(md5($this -> password) != $result[0]["password"]) {
                         echo json_encode("La Contraseña no Coincide");
                     } else {
-                        session_start();
+                        if($result[0]["state"] == 1) {
+                            session_start();
                         
-                        if($result[0]["role"] == "Administrador") {
-                            $_SESSION["user"] = $result[0];
-                            header("Location: ../userManager.php");
-                        } else if($result[0]["role"] == "Usuario") {
-                            $_SESSION["user"] = $result[0];
-                            header("Location: ../clientManager.php");
+                            if($result[0]["role"] == "Administrador") {
+                                $_SESSION["user"] = $result[0];
+                                header("Location: ../userManager.php");
+                            } else if($result[0]["role"] == "Usuario") {
+                                $_SESSION["user"] = $result[0];
+                                header("Location: ../clientManager.php");
+                            }
+                        } else {
+                            echo json_encode("El Usuario está Desabilitado");
                         }
                     }
-                } 
+                }
             } else {
                 echo json_encode($this -> error);
             }

@@ -2,10 +2,10 @@
     namespace connection;
 
     class Connection {
-        public static $user = "root";
-        public static $pass = "root";
+        public static $user = "urg27nqzrot3ug0l";
+        public static $pass = "pEjEgd5nUQTrIBt4Thvj";
         public static $url = (
-            "mysql:host=localhost;dbname=optics"
+            "mysql:host=b8tve1glw1p6tob8qnqz-mysql.services.clever-cloud.com;dbname=b8tve1glw1p6tob8qnqz"
         );
 
         public static function connector() {
