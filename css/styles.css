@@ -106,11 +106,11 @@ body::-webkit-scrollbar-thumb:hover {
 .content__table {
     width: 100%;
     border-spacing: 0;
-    border-radius: 5px;
+    border-radius: 2px;
     text-align: center;
     background: #FFFFFF;
     border-collapse: separate;
-    border: 5px solid #595a6d;
+    border: 3px solid #595a6d;
 }
 
 .content__a {
@@ -278,6 +278,35 @@ body::-webkit-scrollbar-thumb:hover {
     
     .content__select {
         margin-bottom: 54px;
+    }
+
+    .content__table thead {
+        display: none;
+    }
+
+    .content__table, 
+    tbody, tr ,td {
+        width: 100%;
+        display: block;
+    }
+
+    .content__td {
+        text-align: right;
+        padding: 8px 6px;
+        position: relative;
+    }
+
+    .content__td::before {
+        left: 0;
+        padding: 0 6px;
+        text-align: left;
+        font-weight: 600;
+        position: absolute;
+        content: attr(data-label);
+    }
+
+    .content__a {
+        text-align: center;
     }
     
 }

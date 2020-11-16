@@ -33,14 +33,26 @@ export default {
                         thirdValue.innerHTML = "Habilitado";
                         tr.style.color = "black";
                     } else {
-                        thirdValue.innerHTML = "Desabilitado";
+                        thirdValue.innerHTML = "Deshabilitado";
                         tr.style.color = "red";
                     }
                     button.innerHTML = "Actualizar";
 
                     firstValue.className = "content__td";
+                    firstValue.setAttribute(
+                        "data-label", "Rut:"
+                    );
+
                     secondValue.className = "content__td";
+                    secondValue.setAttribute(
+                        "data-label", "Nombre:"
+                    );
+
                     thirdValue.className = "content__td";
+                    thirdValue.setAttribute(
+                        "data-label", "Estado:"
+                    );
+
                     button.className = (
                         "userUpdate " + 
                         "content__td " +

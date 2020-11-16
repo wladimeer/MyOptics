@@ -28,8 +28,8 @@ export default {
     `),
     inputs: [
         {label: "Selecciona", value: ""},
-        {label: "Habilitado", value: 1},
-        {label: "Desabilitado", value: 0}
+        {label: "Habilitar", value: 1},
+        {label: "Deshabilitar", value: 0}
     ],
     loadStates: function() {
         var state = document.getElementById("state");
