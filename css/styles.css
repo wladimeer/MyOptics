@@ -271,6 +271,10 @@ body::-webkit-scrollbar-thumb:hover {
     .content__inputs {
         margin-bottom: 12px;
     }
+
+    .content__input {
+        width: 60%;
+    }    
     
     .content__select {
         margin-bottom: 54px;
