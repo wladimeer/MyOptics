@@ -50,7 +50,7 @@ export default {
             var inputs = new FormData(form);
             
             try {
-                fetch("https://opticsapp.herokuapp.com/NewUser.php", {
+                fetch("https://opticsapp.herokuapp.com/controller/NewUser.php", {
                     method: "post",
                     body: inputs
                 })
