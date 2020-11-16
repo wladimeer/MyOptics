@@ -5,7 +5,7 @@ form.addEventListener("submit", function() {
     var inputs = new FormData(form);
 
     try {
-        fetch("https://opticsapp.herokuapp.com/LoginUser.php", {
+        fetch("https://opticsapp.herokuapp.com/controller/LoginUser.php", {
             method: "post",
             body: inputs
         })
