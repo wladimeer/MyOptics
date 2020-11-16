@@ -50,7 +50,7 @@ export default {
             var inputs = new FormData(form);
             
             try {
-                fetch("http://localhost/optics/controller/NewClient.php", {
+                fetch("https://opticsapp.herokuapp.com/NewClient.php", {
                     method: "post",
                     body: inputs
                 })

@@ -49,7 +49,7 @@ export default {
             var inputs = new FormData(form);
             
             try {
-                fetch("http://localhost/optics/controller/EditUser.php", {
+                fetch("https://opticsapp.herokuapp.com/EditUser.php", {
                     method: "post",
                     body: inputs
                 })

@@ -16,7 +16,7 @@ export default {
         var body = document.getElementById("body");
         
         try {
-            fetch("http://localhost/optics/controller/ViewUser.php")
+            fetch("https://opticsapp.herokuapp.com/ViewUser.php")
             .then(response => response.json())
             .then(user => {
                 user.forEach(item => {
