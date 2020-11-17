@@ -14,8 +14,7 @@
         <div class="contentDrawing contentDrawing-Index">
             <header class="header header-Index">
                 <div class="header__logo">
-                    <!-- <h1>Mi óptica</h1> -->
-                    <img src="image/logo_optics.svg" alt="logo">
+                    <h1>Mi óptica</h1>
                 </div>
 
                 <div class="header__intent">
