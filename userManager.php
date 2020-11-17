@@ -30,8 +30,10 @@
             <?php } ?>
 
             <?php if(!isset($_SESSION["user"])) { ?>
-                <h4 class="refresh__title">Opps no sabemos como llegaste aqui</h4>
-		        <p class="refresh__p">Seras redirecionado en 5 segundos...</p>
+                <div class="refresh">
+                    <h4 class="refresh__title">Opps no sabemos como llegaste aqui</h4>
+		            <p class="refresh__p">Seras redirecionado en 5 segundos...</p>
+                </div>
 		        <meta http-equiv="refresh" content="5;URL=https://opticsapp.herokuapp.com/index.php">
             <?php } ?>
         </div>

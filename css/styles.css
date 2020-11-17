@@ -210,6 +210,10 @@ body::-webkit-scrollbar-thumb:hover {
     animation-name: result-message;
 }
 
+.refresh {
+    text-align: center;
+}
+
 @keyframes result-message {
     0%   {font-size: 0px;}
     100% {font-size: 16px;}
