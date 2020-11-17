@@ -52,5 +52,5 @@ function loadFunction() {
                 request.send("rut=" + this.parentElement.getAttribute("id") + "");
             });
         }
-    }, 1000)
+    }, 1200)
 }

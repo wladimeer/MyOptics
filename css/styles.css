@@ -1,5 +1,6 @@
 html {
     overflow-y: scroll;
+    overflow-x: scroll;
 }
 
 body {
@@ -141,6 +142,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .content__label:hover {
     cursor: pointer;
+    border: 1px solid #c83b41;
 }
 
 .content__inputs {
@@ -152,11 +154,12 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .content__input {
-    width: 68%;
+    width: 70%;
     padding: 6px;
     outline: none;
     border-radius: 8px;
     background: #FFFFFF;
+    box-sizing: border-box;
     border: 2px solid transparent;
 }
 
@@ -173,6 +176,7 @@ body::-webkit-scrollbar-thumb:hover {
     transition: 2s;
     margin: 12px 0;
     font-size: 20px;
+    margin-top: 46px;
     color: #FFFFFF;
     border-radius: 8px;
     background: #c83b41;
@@ -180,15 +184,13 @@ body::-webkit-scrollbar-thumb:hover {
 
 .content__button:hover {
     cursor: pointer;
-    background: #a13030;
 }
 
 .content__select {
-    width: 68%;
+    width: 70%;
     padding: 8px;
     transition: 0.1s;
     border-radius: 1px;
-    margin-bottom: 46px;
     border: 2px solid #ffffff;
 }
 
@@ -277,7 +279,11 @@ body::-webkit-scrollbar-thumb:hover {
     }    
     
     .content__select {
-        margin-bottom: 54px;
+        width: 60%;
+    }
+
+    .content__button {
+        margin-top: 66px;
     }
 
     .content__table thead {
