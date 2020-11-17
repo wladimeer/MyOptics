@@ -184,7 +184,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .content__select {
-    width: 100%;
+    width: 68%;
     padding: 8px;
     transition: 0.1s;
     border-radius: 1px;

@@ -12,6 +12,7 @@ export default {
             </div>
 
             <div class="content__inputs">
+                <label class="content__label" for="state">Estado</label>
                 <select name="state" id="state" class="content__select"></select>
             </div>
 
