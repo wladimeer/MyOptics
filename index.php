@@ -15,7 +15,7 @@
             <header class="header header-Index">
                 <div class="header__logo">
                     <!-- <h1>Mi óptica</h1> -->
-                    <img src="image/logo-optics.svg" alt="logo">
+                    <img src="image/logo_optics.svg" alt="logo">
                 </div>
 
                 <div class="header__intent">
