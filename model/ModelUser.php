@@ -7,7 +7,7 @@
     class ModelUser {
         public $INSERT = "insert into users values(:rut, :name, :role, :password, :state)";
         public $UPDATE = "update users set state = :state where rut = :rut";
-        public $SELECT = "select * from users";
+        public $SELECT = "select * from users where role = 'Usuario'";
         public $SEARCH = "select * from users where rut = :rut";
 
         public function create($user) {
