@@ -38,6 +38,7 @@
             if(isset($_POST["prism"])) {
                 $this -> prism = 0;
             }
+            
             if(
                 $this -> lens_type == "" && $this -> crystal_type == "" &&
                 $this -> crystal_material == "" && $this -> sphere_left == "" &&
