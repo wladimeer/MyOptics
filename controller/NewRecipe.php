@@ -35,6 +35,10 @@
         }
 
         public function validate() {
+            if(isset($_POST["prism"])) {
+                $this -> prism = "";
+            }
+
             if(
                 $this -> lens_type == "" && $this -> crystal_type == "" &&
                 $this -> crystal_material == "" && $this -> sphere_left == "" &&
@@ -70,11 +74,11 @@
                         $this -> error = "Verifica el Rango de la Distancia Pupilar". "<br>";
                     }
 
-                    if($this -> axis_left == "" || $this -> axis_left < 1) {
+                    if($this -> axis_left == "" || $this -> axis_left < 1 || $this -> axis_left > 180) {
                         $this -> error .= "Verifica el Eje del Ojo Izquierdo". "<br>";
                     }
 
-                    if($this -> axis_right == "" || $this -> axis_right < 1) {
+                    if($this -> axis_right == "" || $this -> axis_right < 1 || $this -> axis_right > 180) {
                         $this -> error .= "Verifica el Eje del Ojo Derecho". "<br>";
                     }
     
