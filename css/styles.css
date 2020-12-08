@@ -152,6 +152,7 @@ body::-webkit-scrollbar-thumb:hover {
 .content__inputs, .content_checkbox {
     display: flex;
     margin-bottom: 28px;
+    align-items: center;
     justify-content: space-between;
 }
 
