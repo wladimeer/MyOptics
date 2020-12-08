@@ -22,6 +22,7 @@
             $this -> axis_left = $_POST["axis_left"];
             $this -> axis_right = $_POST["axis_right"];
             $this -> base = $_POST["base"];
+            $this -> prism = $_POST["prism"];
             $this -> frame = $_POST["frame"];
             $this -> pupillary_distance = $_POST["pupillary_distance"];
             $this -> lens_value = $_POST["lens_value"];
@@ -35,11 +36,8 @@
 
         public function validate() {
             if(isset($_POST["prism"])) {
-                $this -> prism = "";
-            } else {
-                $this -> prism = $_POST["prism"];
+                $this -> prism = 0;
             }
-
             if(
                 $this -> lens_type == "" && $this -> crystal_type == "" &&
                 $this -> crystal_material == "" && $this -> sphere_left == "" &&
