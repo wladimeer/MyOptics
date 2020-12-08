@@ -185,7 +185,7 @@ body::-webkit-scrollbar-thumb:hover {
     padding: 6px;
     outline: none;
     color: #000000;
-    min-width: 30px;
+    min-width: 25px;
     border-radius: 6px;
     border: 1.6px solid #232121;
 }
@@ -324,10 +324,6 @@ body::-webkit-scrollbar-thumb:hover {
     .content__td {
         padding: 8px 6px;
         box-sizing: border-box;
-    }
-
-    .content__inputs {
-        /* margin-bottom: 12px; */
     }
 
     .content__input {
