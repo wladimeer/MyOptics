@@ -133,7 +133,7 @@ body::-webkit-scrollbar-thumb:hover {
     padding: 6px;
     outline: none;
     color: #000000;
-    min-width: 200px;
+    min-width: 100px;
     border-radius: 6px;
     background: #FFFFFF;
     box-sizing: border-box;
@@ -272,11 +272,11 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .footer__p {
+    font-size: 14px;
     text-align: center;
 }
 
 .refresh {
-    font-size: 10px;
     text-align: center;
 }
 
