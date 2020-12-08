@@ -271,6 +271,10 @@ body::-webkit-scrollbar-thumb:hover {
     background: #4F6792;
 }
 
+.footer__p {
+    text-align: center;
+}
+
 .refresh {
     text-align: center;
 }
@@ -278,7 +282,7 @@ body::-webkit-scrollbar-thumb:hover {
 @media screen and (max-width: 1100px) {
 
     .contentDrawing {
-        width: 86%;
+        width: 92%;
         padding: 0;
         margin: 10px;
     }
