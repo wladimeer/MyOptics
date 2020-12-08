@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -10,7 +10,7 @@
     <title>Menu Principal</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="app">
         <div class="contentDrawing contentDrawing-Manager">
             <?php session_start(); ?>
             <?php if(isset($_SESSION["user"])) { ?>
@@ -20,14 +20,16 @@
                     </div>
 
                     <div class="header__options" id="options">
-                        <a class="header__a" id="newClient">Nuevo Cliente</a>
-                        <a class="header__a" id="searchRecipe">Buscar Receta</a>
-                        <a class="header__a" id="newRecipe">Nueva Receta</a>
+                        <a class="header__a" v-on:click="newClient">Nuevo Cliente</a>
+                        <a class="header__a" v-on:click="viewRecipe">Buscar Receta</a>
+                        <a class="header__a" v-on:click="newRecipe">Nueva Receta</a>
                         <a href="controller/SignOffUser.php" class="header__a label__a">Cerrar Sesión</a>
                     </div>
                 </header>
 
-                <section class="content content-Manager" id="content"></section>
+                <section class="content content-Manager">
+                    <div v-bind:is="$store.state.currentPage"></div>
+                </section>
             <?php } ?>
 
             <?php if(!isset($_SESSION["user"])) { ?>
@@ -40,6 +42,11 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/clientManager.js" type="module"></script>
+    <script src="https://unpkg.com/vuex"></script>
+    <script src="js/component/newClient.js"></script>
+    <script src="js/component/viewRecipe.js"></script>
+    <script src="js/component/newRecipe.js"></script>
 </body>
 </html>

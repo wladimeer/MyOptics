@@ -1,10 +1,10 @@
 <?php
     namespace controller;
 
-    use model\ModelUser;
-    require_once("../model/ModelUser.php");
+    use model\ModelClient;
+    require_once("../model/ModelClient.php");
 
-    class SearchUser {
+    class SearchClient {
         public $rut;
 
         public function __construct() {
@@ -12,10 +12,8 @@
         }
 
         public function search() {
-            $modelUser = new ModelUser();
-            $result = $modelUser -> search(
-                $this -> rut
-            );
+            $modelClient = new ModelClient();
+            $result = $modelClient -> search($this -> rut);
 
             session_start();
 
@@ -31,6 +29,6 @@
         }
     }
 
-    $object = new SearchUser();
+    $object = new SearchClient();
     $object -> search();
 ?>

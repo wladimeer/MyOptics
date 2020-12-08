@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -10,7 +10,7 @@
     <title>Mi óptica</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="app">
         <div class="contentDrawing contentDrawing-Index">
             <header class="header header-Index">
                 <div class="header__logo">
@@ -23,25 +23,29 @@
             </header>
 
             <section class="content content-Index">
-                <form class="content__form" id="form">
-                    <div class="content__inputs">
+                <div class="content__form">
+                    <div class="content__group">
                         <label class="content__label" for="rut">Usuario</label>
-                        <input type="text" class="content__input" placeholder="Ingresa Rut Usuario" id="rut" name="rut">
+                        <input type="text" class="content__input" placeholder="Ingresa Rut Usuario" 
+                            id="rut" v-model="rut" v-on:keyup.enter="login" autofocus>
                     </div>
 
-                    <div class="content__inputs">
+                    <div class="content__group">
                         <label class="content__label" for="password">Contraseña</label>
-                        <input type="password" class="content__input" placeholder="Ingresa Contraseña" id="password" name="password">
+                        <input type="password" class="content__input" placeholder="Ingresa Contraseña" 
+                            id="password" v-model="password" v-on:keyup.enter="login">
                     </div>
 
                     <div class="content__function">
-                        <button type="submit" class="content__button">Iniciar Sesión</button>
+                        <button class="content__button" v-on:click="login">Iniciar Sesión</button>
                     </div>
 
                     <div class="content__result">
-                        <p class="content__message" id="result"></p>
+                        <p class="content__message" v-html="message"
+                            v-bind:class="{'message-success': message == 'Iniciando Sesión...'}">
+                        </p>
                     </div>
-                </form>
+                </div>
             </section>
 
             <footer class="footer">
@@ -50,6 +54,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/loginUser.js"></script>
 </body>
 </html>

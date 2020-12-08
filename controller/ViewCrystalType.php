@@ -1,14 +1,14 @@
 <?php
     namespace controller;
 
-    use model\ModelUser;
-    require_once("../model/ModelUser.php");
+    use model\ModelCrystalType;
+    require_once("../model/ModelCrystalType.php");
 
-    class ViewUser {
+    class ViewCrystalType {
 
         public function view() {
-            $modelUser = new ModelUser();
-            $result = $modelUser -> read();
+            $modelCrystalType = new ModelCrystalType();
+            $result = $modelCrystalType -> read();
 
             session_start();
 
@@ -25,6 +25,6 @@
 
     }
 
-    $object = new ViewUser();
+    $object = new ViewCrystalType();
     $object -> view();
 ?>

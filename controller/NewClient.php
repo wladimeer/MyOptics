@@ -8,7 +8,7 @@
         public $rut, $name, $address, $phone, $date, $email;
         public $error = "";
 
-        public function __construct(){
+        public function __construct() {
             $this -> rut = $_POST["rut"];
             $this -> name = $_POST["name"];
             $this -> address = $_POST["address"];
@@ -26,27 +26,27 @@
                 $this -> error = "Verifica los Campos";
             } else {
                 if($this -> rut == "") {
-                    $this -> error = "Verifica el Rut Ingresado". "<br>";
+                    $this -> error = "Verifica el Rut del Cliente". "<br>";
                 }
 
                 if($this -> name == "") {
-                    $this -> error .= "Verifica el Nombre Ingresado". "<br>";
+                    $this -> error .= "Verifica el Nombre del Cliente". "<br>";
                 }
 
                 if($this -> address == "") {
-                    $this -> error .= "Verifica la Dirección Ingresada". "<br>";
+                    $this -> error .= "Verifica la Dirección del Cliente". "<br>";
                 }
 
                 if($this -> phone == "") {
-                    $this -> error .= "Verifica el Telefono Ingresado". "<br>";
+                    $this -> error .= "Verifica el Telefono del Cliente". "<br>";
                 }
 
                 if($this -> date == "") {
-                    $this -> error .= "Verifica la Fecha Ingresada". "<br>";
+                    $this -> error .= "Selecciona la Fecha al Cliente". "<br>";
                 }
 
                 if($this -> email == "") {
-                    $this -> error .= "Verifica el Correo Ingresado";
+                    $this -> error .= "Verifica el Correo del Cliente";
                 }
             }
         }
@@ -54,15 +54,12 @@
         public function addClient() {
             $this -> validate();
             
-
             if($this -> error == "") {
                 $modelClient = new ModelClient();
-                $result = $modelClient -> read(
-                    $this -> rut
-                );
+                $result = $modelClient -> read($this -> rut);
 
                 if(count($result) > 0) {
-                    echo json_encode("El Rut Ingresado está Registrado");
+                    echo json_encode("El Rut Ingresado Está Registrado");
                 } else {
                     $client = [
                         "rut" => $this -> rut,
@@ -73,14 +70,12 @@
                         "email" => $this -> email
                     ];
 
-                    $result = $modelClient -> create(
-                        $client
-                    );
+                    $result = $modelClient -> create($client);
                     
                     if($result) {
-                        echo json_encode("Registrado");
+                        echo json_encode("El Cliente Se Registro");
                     } else {
-                        echo json_encode("Cliente no Registrado");
+                        echo json_encode("El Cliente No Se Registro");
                     }
                 }
             } else {

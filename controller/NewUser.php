@@ -8,22 +8,22 @@
         public $rut, $name, $state;
         public $error = "";
 
-        public function __construct(){
+        public function __construct() {
             $this -> rut = $_POST["rut"];
             $this -> name = $_POST["name"];
             $this -> state = $_POST["state"];
         }
-
+        
         public function validate() {
             if($this -> rut == "" && $this -> name == "" && $this -> state == "") {
                 $this -> error = "Verifica los Campos";
             } else {
                 if($this -> rut == "") {
-                    $this -> error = "Verifica el Rut Ingresado". "<br>";
+                    $this -> error = "Verifica el Rut del Usuario". "<br>";
                 }
 
                 if($this -> name == "") {
-                    $this -> error .= "Verifica el Nombre Ingresado". "<br>";
+                    $this -> error .= "Verifica el Nombre del Usuario". "<br>";
                 }
 
                 if($this -> state == "") {
@@ -37,29 +37,25 @@
             
             if($this -> error == "") {
                 $modelUser = new ModelUser();
-                $result = $modelUser -> search(
-                    $this -> rut
-                );
+                $result = $modelUser -> search($this -> rut);
 
                 if(count($result) > 0) {
-                    echo json_encode("El Rut Ingresado está Registrado");
+                    echo json_encode("El Rut Está Registrado");
                 } else {
                     $user = [
                         "rut" => $this -> rut,
                         "name" => $this -> name,
                         "role" => "Usuario",
                         "password" => md5("123456"),
-                        "state" => $this -> state,
+                        "state" => $this -> state
                     ];
 
-                    $result = $modelUser -> create(
-                        $user
-                    );
+                    $result = $modelUser -> create($user);
                     
                     if($result) {
-                        echo json_encode("Registrado");
+                        echo json_encode("El Usuario Se Registro");
                     } else {
-                        echo json_encode("Usuario no Registrado");
+                        echo json_encode("El Usuario No Se Registro");
                     }
                 }
             } else {

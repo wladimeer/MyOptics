@@ -1,56 +1,61 @@
-import viewUser from "./module/viewUser.js";
-import newUser from "./module/newUser.js";
-import editUser from "./module/editUser.js";
+const store = new Vuex.Store({
+    state: {
+        currentPage: "viewUser",
+        rut: "", name: "", state: ""
+    },
+    mutations: {
+        viewUser: function(state) {
+            state.currentPage = "viewUser";
+        },
+        newUser: function(state) {
+            state.currentPage = "newUser";
+        },
+        editUser: async function(state, identifier) {
+            try {
+                var form = new FormData();
+                form.append("rut", identifier);
 
-var content = document.getElementById("content");
+                const response = await fetch(
+                    "https://opticsapp.herokuapp.com/controller/SearchUser.php",
+                    { method: "post", body: form }
+                );
 
-loadViewUser();
+                if(response.ok) {
+                    const received = await response.json();
 
-function loadViewUser() {
-    content.innerHTML = viewUser.form;
-    viewUser.loadUser();
-    loadFunction();
-}
-
-function loadNewUser() {
-    content.innerHTML = newUser.form;
-    window.inputs = newUser.inputs;
-    newUser.loadStates();
-    newUser.create();
-}
-
-document.getElementById("viewUser").addEventListener("click", function() {
-    loadViewUser();
-});
-
-document.getElementById("newUser").addEventListener("click", function() {
-    loadNewUser();
-});
-
-function loadFunction() {
-    setTimeout(() => {
-        var userUpdate = document.getElementsByClassName("userUpdate");
-
-        for(var i = 0; i < userUpdate.length; i++){
-            userUpdate[i].addEventListener("click",function(){
-                content.innerHTML = editUser.form;
-                window.inputs = editUser.inputs;
-                editUser.loadStates();
-                editUser.update();
-
-                var request = new XMLHttpRequest();
-                request.open("post", "controller/SearchUser.php", true);
-                request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                request.responseType = "json";
-                request.onreadystatechange = function() {
-                    if(request.response != null) {
-                        document.getElementById("rut").value = request.response[0]["rut"];
-                        document.getElementById("name").value = request.response[0]["name"];
-                        document.getElementById("state").value = request.response[0]["state"];
+                    if(received == "") {
+                        console.log("No Data Was Obtained");
+                    } else {
+                        state.rut = received[0].rut;
+                        state.name = received[0].name;
+                        state.state = received[0].state;
                     }
-                };
-                request.send("rut=" + this.parentElement.getAttribute("id") + "");
-            });
+                } else {
+                    console.log("No Server Response");
+                }
+            } catch (exception) {
+                console.log("UserManagerException: " + exception);
+            }
+            
+            state.currentPage = "editUser";
         }
-    }, 1500)
-}
+    },
+    getters: {
+        userData(state) {
+            return [state.rut, state.name, state.state];
+        }
+    }
+});
+
+new Vue({ 
+    el: "#app",
+    store: store,
+    components: {
+        viewUser: { template: "<view-user></view-user>" },
+        newUser: { template: "<new-user></new-user>" },
+        editUser: { template: "<edit-user></edit-user>" }
+    },
+    methods: {
+        ...Vuex.mapMutations(["viewUser", "newUser"])
+    }
+});

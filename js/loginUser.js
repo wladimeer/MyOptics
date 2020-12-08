@@ -1,34 +1,44 @@
-var form = document.getElementById("form");
+new Vue({
+    el: "#app",
+    data: {
+        rut: "", password: "", message: ""
+    },
+    methods: {
+        login: async function(event) {
+            event.preventDefault();
 
-form.addEventListener("submit", function() {
-    var result = document.getElementById("result");
-    var inputs = new FormData(form);
+            var form = new FormData();
+            form.append("rut", this.rut);
+            form.append("password", this.password);
 
-    try {
-        fetch("https://opticsapp.herokuapp.com/controller/LoginUser.php", {
-            method: "post",
-            body: inputs
-        })
-        .then(response => response.json())
-        .then(received => {
-            result.innerHTML = received
-            result.classList.add("result-active");
-            result.style.color = "red";
-        })
-        .catch(() => {
-            result.innerHTML = "Iniciando Sesión...";
-            result.classList.add("result-active");
-            result.style.color = "green"
+            try {
+                const response = await fetch(
+                    "https://opticsapp.herokuapp.com/controller/LoginUser.php", 
+                    { method: "post", body: form }
+                );
 
-            setTimeout(() => {    
-                form.action = "controller/LoginUser.php";
-                form.method = "post";
-                form.submit();
-            }, 2000);
-        });
-    } catch (exception) {
-        console.log("Exception: " + exception);
+                if(response.ok) {
+                    const received = await response.json();
+                    
+                    if(received.success != undefined) {
+                        this.message = "Iniciando Sesión...";
+
+                        setTimeout(() => {    
+                            if(received.success == "Usuario") {
+                                window.location.href = "clientManager.php";
+                            } else {
+                                window.location.href = "userManager.php";
+                            }
+                        }, 1200);
+                    } else {
+                        this.message = received.message;
+                    }
+                } else {
+                    console.log("No Server Response");
+                }
+            } catch (exception) {
+                console.log("LoginUserException: " + exception);
+            }
+        }
     }
-
-    event.preventDefault();
 });

@@ -1,22 +1,29 @@
-import newClient from "./module/newClient.js";
-
-var content = document.getElementById("content");
-
-loadNewClient();
-
-function loadNewClient() {
-    content.innerHTML = newClient.form;
-    newClient.create();
-}
-
-document.getElementById("newClient").addEventListener("click", function() {
-    loadNewClient();
+const store = new Vuex.Store({
+    state: {
+        currentPage: "newClient",
+    },
+    mutations: {
+        newClient: function(state) {
+            state.currentPage = "newClient";
+        },
+        viewRecipe: function(state) {
+            state.currentPage = "viewRecipe";
+        },
+        newRecipe: function(state) {
+            state.currentPage = "newRecipe";
+        }
+    }
 });
 
-document.getElementById("searchRecipe").addEventListener("click", function() {
-    
-});
-
-document.getElementById("newRecipe").addEventListener("click", function() {
-    
+new Vue({ 
+    el: "#app",
+    store: store,
+    components: {
+        newClient: { template: "<new-client></new-client>" },
+        viewRecipe: { template: "<view-recipe></view-recipe>" },
+        newRecipe: { template: "<new-recipe></new-recipe>" }
+    },
+    methods: {
+        ...Vuex.mapMutations(["newClient", "viewRecipe", "newRecipe"])
+    }
 });
