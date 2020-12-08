@@ -276,6 +276,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .refresh {
+    font-size: 14px;
     text-align: center;
 }
 
