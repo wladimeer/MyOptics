@@ -23,7 +23,6 @@
             $this -> axis_right = $_POST["axis_right"];
             $this -> base = $_POST["base"];
             $this -> frame = $_POST["frame"];
-            $this -> prism = $_POST["prism"];
             $this -> pupillary_distance = $_POST["pupillary_distance"];
             $this -> lens_value = $_POST["lens_value"];
             $this -> deliver_date = $_POST["deliver_date"];
@@ -37,6 +36,8 @@
         public function validate() {
             if(isset($_POST["prism"])) {
                 $this -> prism = "";
+            } else {
+                $this -> prism = $_POST["prism"];
             }
 
             if(
