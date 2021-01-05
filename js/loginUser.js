@@ -13,7 +13,7 @@ new Vue({
 
             try {
                 const response = await fetch(
-                    "https://opticsapp.herokuapp.com/controller/LoginUser.php", 
+                    "https://opticsapp.herokuapp.com/controller/LoginUser.php",
                     { method: "post", body: form }
                 );
 

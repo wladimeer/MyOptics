@@ -14,6 +14,30 @@
                 :rut_user, 1
             )
         ");
+        public $SELECT = ("
+            select r.id, r.lens_type, r.sphere_left, r.sphere_right, r.cylinder_left,
+            r.cylinder_right, r.axis_left, r.axis_right, r.prism, r.base, f.name 'frame',
+            m.material 'crystal_material', t.type 'crystal_type', r.pupillary_distance,
+            r.lens_value, r.deliver_date, r.retirement_date, r.observation,
+            c.rut 'rut_client', c.name 'name_client', c.phone 'phone_client',
+            u.name 'name_user', r.state from recipe r inner join frame f on f.id = r.frame
+            inner join  crystal_material m on m.id = crystal_material inner join
+            crystal_type t on t.id = crystal_type inner join client c on
+            c.rut = rut_client inner join users u on u.rut = rut_user where
+            r.rut_client = :rut_client
+        ");
+        public $SELECT_ID = ("
+            select r.id, r.lens_type, r.sphere_left, r.sphere_right, r.cylinder_left,
+            r.cylinder_right, r.axis_left, r.axis_right, r.prism, r.base, f.name 'frame',
+            m.material 'crystal_material', t.type 'crystal_type', r.pupillary_distance,
+            r.lens_value, r.deliver_date, r.retirement_date, r.observation,
+            c.rut 'rut_client', c.name 'name_client', c.phone 'phone_client',
+            u.name 'name_user', r.state from recipe r inner join frame f on f.id = r.frame
+            inner join  crystal_material m on m.id = crystal_material inner join
+            crystal_type t on t.id = crystal_type inner join client c on
+            c.rut = rut_client inner join users u on u.rut = rut_user where
+            r.id = :id_recipe
+        ");
         public $SELECT_RUT = "select id, lens_type, deliver_date from recipe where rut_client like :rut_client";
         public $SELECT_DATE = "select id, lens_type, deliver_date from recipe where deliver_date like :deliver_date";
         
@@ -107,6 +131,34 @@
             );
 
             return $assistant -> execute();
+        }
+
+        public function readAll($rut_client) {
+            $assistant = Connection::connector() -> prepare(
+                $this -> SELECT
+            );
+
+            $assistant -> bindParam(
+                ":rut_client", $rut_client
+            );
+
+            $assistant -> execute();
+
+            return $assistant -> fetchAll(\PDO::FETCH_ASSOC);
+        }
+
+        public function readById($id_recipe) {
+            $assistant = Connection::connector() -> prepare(
+                $this -> SELECT_ID
+            );
+
+            $assistant -> bindParam(
+                ":id_recipe", $id_recipe
+            );
+
+            $assistant -> execute();
+
+            return $assistant -> fetchAll(\PDO::FETCH_ASSOC);
         }
 
         public function readByRut($rut_client) {

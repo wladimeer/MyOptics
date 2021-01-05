@@ -41,7 +41,7 @@ body::-webkit-scrollbar-thumb:hover {
     margin: 20px;
     display: flex;
     padding: 12px;
-    transition: 2s;
+    transition: .5s;
     border-radius: 5px;
     align-items: center;
     flex-direction: column;
@@ -79,7 +79,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .header__a {
     padding: 8px;
-    transition: .2s;
+    transition: .5s;
     color: #FFFFFF;
     margin-left: 12px;
     border-radius: 5px;
@@ -98,7 +98,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .content {
     width: 90%;
-    transition: .2s;
+    transition: .5s;
     box-sizing: border-box;
 }
 
@@ -216,7 +216,7 @@ body::-webkit-scrollbar-thumb:hover {
     outline: none;
     font-size: 17px;
     color: #FFFFFF;
-    transition: .2s;
+    transition: .5s;
     border-radius: 6px;
     background: #385996;
 }
@@ -263,13 +263,43 @@ body::-webkit-scrollbar-thumb:hover {
     outline: none;
     font-size: 17px;
     color: #FFFFFF;
-    transition: .2s;
+    transition: .5s;
     background: #637CAA;
 }
 
 .content__a:hover {
     cursor: pointer;
     background: #4F6792;
+}
+
+.modal {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 8px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.content-modal {
+    width: 650px;
+    padding: 12px;
+    display: block;
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 36px;
+    background: #FFFFFF;
+    border: 1px solid #0A337E;
+}
+
+.modal__h1 {
+    color: #000000;
 }
 
 .footer__p {
@@ -312,11 +342,9 @@ body::-webkit-scrollbar-thumb:hover {
         margin: 20px;
     }
 
-    .content-Manager {
-        width: 100%;
-    }
-
-    .content__form {
+    .content-Manager,
+    .content__form,
+    .content-modal {
         width: 100%;
     }
 

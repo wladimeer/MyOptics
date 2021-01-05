@@ -16,13 +16,14 @@ Vue.component("view-recipe", {
                     <tr>
                         <th class="content__th">Tipo de Lente</th>
                         <th class="content__th">Fecha de Entrega</th>
-                        <th class="content__th">Función</th>
+                        <th class="content__th" colspan="2">Funciónes</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="content__tr" v-if="recipes != ''"  v-for="recipe in recipes">
                         <td class="content__td" data-label="Tipo de Lente:">{{ recipe.lens_type }}</td>
                         <td class="content__td" data-label="Fecha de Entrega:">{{ recipe.deliver_date }}</td>
+                        <td class="content__td content__a" v-on:click="check(recipe.id)">Revisar</td>
                         <td class="content__td content__a" v-on:click="detail(recipe.id)">Exportar</td>
                     </tr>
 
@@ -31,17 +32,69 @@ Vue.component("view-recipe", {
                     </tr>
                 </tbody>
             </table>
+
+            <div class="modal" v-if="modal" v-on:click="uncheck">
+                <div class="content-modal">
+                    <h1 class="modal__h1">Detalles de la Receta</h1><hr>
+
+                    <table class="content__table" border="1">
+                        <thead>
+                            <tr>
+                                <th class="content__th">Cliente</th>
+                                <th class="content__th">Fecha de Entrega</th>
+                                <th class="content__th">Fecha de Retiro</th>
+                                <th class="content__th">Valor Lente</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="content__tr" v-if="recipes != ''"  v-for="recipe in recipe">
+                                <td class="content__td" data-label="Cliente:">{{ recipe.name_client }}</td>
+                                <td class="content__td" data-label="Fecha de Entrega:">{{ recipe.deliver_date }}</td>
+                                <td class="content__td" data-label="Fecha de Retiro:">{{ recipe.retirement_date }}</td>
+                                <td class="content__td" data-label="Valor Lente:">` + "$" + `{{ recipe.lens_value }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </form>
     `),
     data: function() {
         return {
             lens_type: "", deliver_date: "", rut: "",
-            date: "", recipes: ""
+            date: "", recipes: "", recipe: "", modal: false
         }
     },
     methods: {
+        check: async function(identifier) {
+            var form = new FormData();
+            form.append("id", identifier);
+
+            try {
+                const response = await fetch(
+                    "https://opticsapp.herokuapp.com/controller/ViewRecipe.php",
+                    { method: "post", body: form }
+                );
+    
+                if(response.ok) {
+                    const received = await response.json();
+                    this.recipe = received;
+                } else {
+                    console.log("No Server Response");
+                }
+            } catch (exception) {
+                console.log("ViewRecipeException: " + exception);
+            }
+
+            this.modal = true;
+        },
+        uncheck: function() {
+            this.modal = false;
+        },
         detail: function(identifier) {
-            console.log(identifier);
+            window.open(
+                "https://opticsapp.herokuapp.com/controller/NewReport.php?id=" + identifier + "_blank"
+            );
         },
         searchRecipe: async function(operation) {
             var form = new FormData();

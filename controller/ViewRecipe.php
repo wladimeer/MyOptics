@@ -24,6 +24,12 @@
                     );
 
                     echo json_encode($result);
+                } else if(isset($_POST["id"])) {
+                    $result = $modelRecipe -> readById(
+                        $_POST["id"]
+                    );
+
+                    echo json_encode($result);
                 } else {
                     echo json_encode("");
                 }
