@@ -115,7 +115,7 @@ Vue.component("new-recipe", {
                     <option value="3">3</option>
                     <option value="4">4</option>
                 </select>
-            </div>{{ prism }}
+            </div>
 
             <div class="content__group">
                 <label class="content__label" for="pupillary_distance">Distancia Pupilar</label>
