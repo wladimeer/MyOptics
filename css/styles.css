@@ -146,7 +146,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .input-textarea {
     resize: vertical;
-    max-height: 400px;
+    max-height: 500px;
 }
 
 .content__inputs, .content_checkbox {
