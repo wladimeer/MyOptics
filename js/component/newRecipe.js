@@ -32,13 +32,13 @@ Vue.component("new-recipe", {
 
                 <div class="content__options">
                     <div class="content__option">
-                        <input class="content__checkbox" type="radio" value="Cerca" v-model="lens_type">Cerca
+                        <input class="content__checkbox" type="checkbox" value="Cerca" v-model="lens_type">Cerca
                     </div>
 
                     <div class="content__option">
-                        <input class="content__checkbox" type="radio" value="Lejos" v-model="lens_type">Lejos
+                        <input class="content__checkbox" type="checkbox" value="Lejos" v-model="lens_type">Lejos
                     </div>
-                </div>
+                </div>{{ lens_type }}
             </div>
 
             <div class="content__inputs">
