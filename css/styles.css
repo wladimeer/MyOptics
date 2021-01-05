@@ -311,6 +311,10 @@ body::-webkit-scrollbar-thumb:hover {
     text-align: center;
 }
 
+.refresh__title {
+    font-size: 16px;
+}
+
 @media screen and (max-width: 1100px) {
 
     .contentDrawing {
