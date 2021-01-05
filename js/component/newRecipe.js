@@ -47,10 +47,10 @@ Vue.component("new-recipe", {
                 </div>
                 
                 <div class="inputs__groups">
-                    <input class="input__group" type="number" pattern="[+-]+[0-9].[0-9]{2,}" placeholder="Esfera" 
-                        title="Ejemplo +0.25 o -0.25" v-model="sphere_left">
-                    <input class="input__group" type="number" pattern="[+-]+[0-9].[0-9]{2,}" placeholder="Cilindro" 
-                        title="Ejemplo +0.25 o -0.25" v-model="cylinder_left">
+                    <input class="input__group" type="number" required pattern="[+-]+[0-9].[0-9]{2,2}" 
+                        placeholder="Esfera" title="Ejemplo +0.25 o -0.25" v-model="sphere_left">
+                    <input class="input__group" type="number" required pattern="[+-]+[0-9].[0-9]{2,2}" 
+                        placeholder="Cilindro" title="Ejemplo +0.25 o -0.25" v-model="cylinder_left">
                     <input class="input__group" type="number" placeholder="Eje" v-model="axis_left">
                 </div>
             </div>
@@ -61,10 +61,10 @@ Vue.component("new-recipe", {
                 </div>
 
                 <div class="inputs__groups">
-                    <input class="input__group" type="number" pattern="[+-]+[0-9].[0-9]{2,}" placeholder="Esfera" 
-                        title="Ejemplo +0.25 o -0.25" v-model="sphere_right">
-                    <input class="input__group" type="number" pattern="[+-]+[0-9].[0-9]{2,}" placeholder="Cilindro" 
-                        title="Ejemplo +0.25 o -0.25" v-model="cylinder_right">
+                    <input class="input__group" type="number"  required pattern="[+-]+[0-9].[0-9]{2,2}" 
+                        placeholder="Esfera" title="Ejemplo +0.25 o -0.25" v-model="sphere_right">
+                    <input class="input__group" type="number"  required pattern="[+-]+[0-9].[0-9]{2,2}" 
+                        placeholder="Cilindro" title="Ejemplo +0.25 o -0.25" v-model="cylinder_right">
                     <input class="input__group" type="number" placeholder="Eje" v-model="axis_right">
                 </div>
             </div>
