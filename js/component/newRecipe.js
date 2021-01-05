@@ -170,7 +170,7 @@ Vue.component("new-recipe", {
     `),
     data: function() {
         return {
-            rut_client: "", lens_type: "", sphere_left: "", cylinder_left: "",
+            rut_client: "", lens_type: [], sphere_left: "", cylinder_left: "",
             axis_left: "", sphere_right: "", cylinder_right: "", axis_right: "",
             crystal_types: "", crystal_materials: "", frames: "", retirement_date: "",
             prism: "", pupillary_distance: "", lens_value: "", deliver_date: "",
