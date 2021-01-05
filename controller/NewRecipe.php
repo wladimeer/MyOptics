@@ -74,11 +74,11 @@
                         $this -> error = "Verifica el Rango de la Distancia Pupilar". "<br>";
                     }
 
-                    if($this -> axis_left == "" || $this -> axis_left < 1 || $this -> axis_left > 180) {
+                    if($this -> axis_left == "" || $this -> axis_left < 0 || $this -> axis_left > 180) {
                         $this -> error .= "Verifica el Eje del Ojo Izquierdo". "<br>";
                     }
 
-                    if($this -> axis_right == "" || $this -> axis_right < 1 || $this -> axis_right > 180) {
+                    if($this -> axis_right == "" || $this -> axis_right < 0 || $this -> axis_right > 180) {
                         $this -> error .= "Verifica el Eje del Ojo Derecho". "<br>";
                     }
     
