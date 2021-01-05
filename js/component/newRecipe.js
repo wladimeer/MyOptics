@@ -108,8 +108,14 @@ Vue.component("new-recipe", {
 
             <div class="content__group">
                 <label class="content__label" for="prism">Prisma</label>
-                <input class="content__input" type="number" id="prism" v-model="prism">
-            </div>
+                <select class="content__select" id="prism" v-model="prism">
+                    <option value="">Selecciona</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>{{ prism }}
 
             <div class="content__group">
                 <label class="content__label" for="pupillary_distance">Distancia Pupilar</label>
