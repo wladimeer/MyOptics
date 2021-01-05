@@ -38,7 +38,7 @@ Vue.component("new-recipe", {
                     <div class="content__option">
                         <input class="content__checkbox" type="checkbox" value="Lejos" v-model="lens_type">Lejos
                     </div>
-                </div>{{ lens_type }}
+                </div>
             </div>
 
             <div class="content__inputs">
@@ -237,7 +237,7 @@ Vue.component("new-recipe", {
             form.append("rut_client", this.rut);
             form.append("rut_doctor", this.rut_doctor);
             form.append("name_doctor", this.name_doctor);
-
+            console.log(lens_type);
             try {
                 const response = await fetch(
                     "https://opticsapp.herokuapp.com/controller/NewRecipe.php",
