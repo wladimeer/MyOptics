@@ -237,7 +237,7 @@ Vue.component("new-recipe", {
             form.append("rut_client", this.rut);
             form.append("rut_doctor", this.rut_doctor);
             form.append("name_doctor", this.name_doctor);
-            console.log(lens_type);
+            console.log(this.lens_type);
             try {
                 const response = await fetch(
                     "https://opticsapp.herokuapp.com/controller/NewRecipe.php",
