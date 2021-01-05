@@ -16,7 +16,7 @@ Vue.component("view-recipe", {
                     <tr>
                         <th class="content__th">Tipo de Lente</th>
                         <th class="content__th">Fecha de Entrega</th>
-                        <th class="content__th" colspan="2">Funciónes</th>
+                        <th class="content__th" colspan="2">Funciones</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -231,7 +231,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .content__message {
-    transition: 1s;
+    transition: .5s;
     color: #FF0000;
     text-align: center;
 }
