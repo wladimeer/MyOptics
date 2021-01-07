@@ -120,7 +120,7 @@
                     "name_doctor" => $this -> name_doctor,
                     "rut_user" => $_SESSION["user"]["rut"]
                 ]);
-                echo json_encode($result);
+                echo json_encode($result[0]);
 
                 if($result == 1) {
                     echo json_encode("La Receta Se Registro");
