@@ -96,7 +96,8 @@
                 session_start();
 
                 $modelRecipe = new ModelRecipe();
-                $result = $modelRecipe -> create([
+                // $result = $modelRecipe -> create([
+                $result = ([
                     "lens_type" => $this -> lens_type,
                     "crystal_type" => $this -> crystal_type,
                     "crystal_material" => $this -> crystal_material,
@@ -119,6 +120,7 @@
                     "name_doctor" => $this -> name_doctor,
                     "rut_user" => $_SESSION["user"]["rut"]
                 ]);
+                echo json_encode($result);
 
                 if($result == 1) {
                     echo json_encode("La Receta Se Registro");

@@ -130,8 +130,7 @@
                 ":rut_user", $recipe["rut_user"]
             );
 
-            // return $assistant -> execute();
-            return json_encode($recipe);
+            return $assistant -> execute();
         }
 
         public function readAll($rut_client) {
