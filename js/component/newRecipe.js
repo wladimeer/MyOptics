@@ -238,27 +238,6 @@ Vue.component("new-recipe", {
             form.append("rut_client", this.rut);
             form.append("rut_doctor", this.rut_doctor);
             form.append("name_doctor", this.name_doctor);
-
-            console.log("lens_type" + this.lens_type);
-            console.log("crystal_type" + this.type);
-            console.log("crystal_material" + this.material);
-            console.log("sphere_left" + this.sphere_left);
-            console.log("sphere_right" + this.sphere_right);
-            console.log("cylinder_left" + this.cylinder_left);
-            console.log("cylinder_right" + this.cylinder_right);
-            console.log("axis_left" + this.axis_left);
-            console.log("axis_right" + this.axis_right);          
-            console.log("base" + this.base);
-            console.log("frame" + this.frame);
-            console.log("prism" + this.prism);
-            console.log("pupillary_distance" + this.pupillary_distance);
-            console.log("lens_value" + this.lens_value);
-            console.log("deliver_date" + this.deliver_date);
-            console.log("retirement_date" + this.retirement_date);
-            console.log("observation" + this.observation);
-            console.log("rut_client" + this.rut);
-            console.log("rut_doctor" + this.rut_doctor);
-            console.log("name_doctor" + this.name_doctor);
             
             try {
                 const response = await fetch(

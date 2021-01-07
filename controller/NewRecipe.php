@@ -123,7 +123,7 @@
                 if($result == 1) {
                     echo json_encode("La Receta Se Registro");
                 } else {
-                    echo json_encode("La Receta No Se Registro");
+                    echo json_encode("La Receta No Se Registro". $result);
                 }
             } else {
                echo json_encode($this -> error);
