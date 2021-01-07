@@ -16,7 +16,7 @@
                     Connection::$pass
                 );
             } catch (\PDOException $exception) {
-                echo $exception;
+                echo null;
             }
         }
     }

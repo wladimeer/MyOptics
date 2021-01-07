@@ -35,9 +35,9 @@
         }
 
         public function validate() {
-            if(isset($_POST["prism"])) {
-                $this -> prism = 0;
-            }
+            // if(isset($_POST["prism"])) {
+            //     $this -> prism = 0;
+            // }
             
             if(
                 $this -> lens_type == "" && $this -> crystal_type == "" &&
