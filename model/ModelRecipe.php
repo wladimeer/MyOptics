@@ -131,7 +131,7 @@
             );
 
             // return $assistant -> execute();
-            echo $recipe;
+            echo json_encode($recipe);
         }
 
         public function readAll($rut_client) {
