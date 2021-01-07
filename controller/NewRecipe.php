@@ -22,8 +22,8 @@
             $this -> axis_left = $_POST["axis_left"];
             $this -> axis_right = $_POST["axis_right"];
             $this -> base = $_POST["base"];
-            $this -> prism = $_POST["prism"];
             $this -> frame = $_POST["frame"];
+            $this -> prism = $_POST["prism"];
             $this -> pupillary_distance = $_POST["pupillary_distance"];
             $this -> lens_value = $_POST["lens_value"];
             $this -> deliver_date = $_POST["deliver_date"];
@@ -123,7 +123,7 @@
                 if($result == 1) {
                     echo json_encode("La Receta Se Registro");
                 } else {
-                    echo json_encode("La Receta No Se Registro". $result);
+                    echo json_encode("La Receta No Se Registro");
                 }
             } else {
                echo json_encode($this -> error);

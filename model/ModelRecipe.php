@@ -130,7 +130,8 @@
                 ":rut_user", $recipe["rut_user"]
             );
 
-            return $assistant -> execute();
+            // return $assistant -> execute();
+            echo $recipe;
         }
 
         public function readAll($rut_client) {
