@@ -176,8 +176,7 @@ Vue.component("new-recipe", {
             crystal_types: "", crystal_materials: "", frames: "", retirement_date: "",
             prism: "", pupillary_distance: "", lens_value: "", deliver_date: "",
             observation: "", rut_doctor: "", name_doctor: "", message: "",
-            rut: "", name: "", email: "", type: "", material: "", frame: "",
-            doctor_visit_date: "", base: ""
+            rut: "", name: "", email: "", type: "", material: "", frame: "", base: ""
         }
     },
     mounted: async function() {
@@ -249,7 +248,7 @@ Vue.component("new-recipe", {
                     const received = await response.json();
     
                     if(received == "La Receta Se Registro") {
-                        this.lens_type = "", this.type = "";
+                        this.lens_type = [], this.type = "";
                         this.material = "", this.sphere_left = "";
                         this.sphere_right = "", this.cylinder_left = "";
                         this.cylinder_right = "", this.axis_left = "";

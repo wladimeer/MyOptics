@@ -34,11 +34,7 @@
             $this -> name_doctor = $_POST["name_doctor"];
         }
 
-        public function validate() {
-            // if(isset($_POST["prism"])) {
-            //     $this -> prism = 0;
-            // }
-            
+        public function validate() {         
             if(
                 $this -> lens_type == "" && $this -> crystal_type == "" &&
                 $this -> crystal_material == "" && $this -> sphere_left == "" &&
