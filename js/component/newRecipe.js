@@ -144,7 +144,8 @@ Vue.component("new-recipe", {
 
             <div class="content__group">
                 <label class="content__label" for="observation">Observación</label>
-                <textarea class="content__input input-textarea" id="observation" v-model="observation"></textarea>
+                <textarea class="content__input input-textarea" rows="5" id="observation" v-model="observation">
+                </textarea>
             </div><p>
 
             <div class="content__group">

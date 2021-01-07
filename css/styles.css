@@ -145,7 +145,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .input-textarea {
-    height: 200;
     resize: vertical;
     max-height: 400px;
 }
