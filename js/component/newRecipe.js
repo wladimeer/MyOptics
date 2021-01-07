@@ -239,8 +239,8 @@ Vue.component("new-recipe", {
             form.append("rut_doctor", this.rut_doctor);
             form.append("name_doctor", this.name_doctor);
             console.log("Values: " + form.values());
-            console.log("Get: " + form.get());
-            console.log("GetAll: " + form.getAll());
+            console.log("Get: " + form.get(0));
+            console.log("GetAll: " + form.getAll(0));
             console.log("Keys: " + form.keys());
             
             try {
