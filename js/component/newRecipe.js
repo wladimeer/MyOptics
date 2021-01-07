@@ -237,6 +237,7 @@ Vue.component("new-recipe", {
             form.append("rut_client", this.rut);
             form.append("rut_doctor", this.rut_doctor);
             form.append("name_doctor", this.name_doctor);
+            console.log("Form: " + form);
             
             try {
                 const response = await fetch(
